@@ -1,0 +1,64 @@
+<?php
+
+$description = ($this->description)? $this->translate($this->description):$this->translate('description-default');
+$title = ($this->title)? $this->translate($this->title):null;
+$keywords = Summers_Snenko::getMeta_keywords($this->keywords, array($this->title));
+
+$this->headTitle( $title . ' - '. $description );
+$this->headMeta()->appendName('keywords', $keywords);
+$this->headMeta()->appendName('description', $description);
+?>
+
+
+<html lang="<?= $this->translate()->getLocale(); ?>">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headMeta(); ?>
+
+    <link rel="SHORTCUT ICON" href="/favicon.png" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+    <script src="/js/respond.min.js"></script>
+    <script type="text/javascript">var currLang = '';</script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<!--    <link rel="stylesheet" type="text/css" href="/css/docs.min.css">-->
+    <link rel="stylesheet" type="text/css" href="/css/snenko-bootstrap-theme.css">
+    <link href="/css/customer.css" rel="stylesheet" type="text/css"/>
+
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headScript(); ?>
+
+    <?php
+//    if ($this->dojo()->isEnabled()) {
+//        $this->dojo()->setCdnBase(Zend_Dojo::CDN_BASE_AOL)
+//            ->addStyleSheetModule('dijit.themes.tundra');
+//        echo $this->dojo();
+//    }
+    ?>
+</head>
+<body>
+    <!-- row 1: navigation -->
+    <?= $this->partial('master/header.phtml', array('isadmin'=>$this->isadmin)); ?>
+
+    <!-- row 2: content -->
+    <?= $this->layout()->content; ?>
+
+    <!-- row 3: footer -->
+    <?= $this->partial('master/footer.phtml'); ?>
+
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+

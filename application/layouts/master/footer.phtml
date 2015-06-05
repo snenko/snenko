@@ -1,0 +1,30 @@
+<footer class="section section-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-8 col-lg-10">
+
+                <address>
+                    <br>
+                    <strong><?= $this->translate('label') ?></strong><br>
+
+                    <?php if($this->translate('contact-phone')) { ?>
+                        <abbr title="Phone"><?= $this->translate('Phone') ?>:</abbr> <?= $this->translate('contact-phone') ?><br>
+                    <?php } ?>
+
+                    <?php if($this->translate('contact-email')) { ?>
+                        <abbr title="Phone"><?= $this->translate('email') ?>:</abbr> <?= $this->translate('contact-email') ?><br>
+                    <?php } ?>
+
+                    <section>© 2015 <a href="http://snenko.biz.ua">http://snenko.biz.ua</a></section>
+                </address>
+
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 pull-right">
+<!--                <div class="pull-right">-->
+                    <a class="btn btn-social-icon btn-facebook"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                    <a class="btn btn-social-icon btn-vk"><i class="fa fa-3x fa-fw fa-vk text-inverse"></i></a>
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</footer>

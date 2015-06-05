@@ -1,0 +1,26 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+
+                    <h1 class="text-center"><?= $this->translate($this->label); ?></h1>
+                    <p class="text-center"><?= $this->translate($this->sublabel); ?></p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <?= $this->partial('/index/panel/last-articles.phtml', array('articles' => $this->articles)); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?= $this->partial('/index/panel/last-products.phtml', array('products' => $this->products)); ?>
+            </div>
+        </div>
+    </div>
+</div>

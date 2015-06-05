@@ -1,0 +1,35 @@
+<?php IF($this->ishead): ?>
+    <tr class="active">
+        <td><?= $this->translate('number'); ?></td>
+        <td><?= $this->translate('picture'); ?></td>
+        <td><?= $this->translate('name'); ?></td>
+        <td><?= $this->translate('description'); ?></td>
+        <td><?= $this->translate('galleries'); ?></td>
+    </tr>
+<?php ELSE: ?>
+<tr>
+    <td>
+        <?= $this->partial('/product/row/product-admin-panel.phtml', array('productid' => $this->product['productid']));?>
+
+        <?= $this->product['num-row']; ?>
+    </td>
+    <td>
+        <a href="<?= $this->url(array('id' => $this->product['productid']), 'product-display'); ?>">
+            <?= $this->escape($this->product['name']); ?>
+        </a>
+    </td>
+    <td>
+        <?php $url= $this->url(array('id' => $this->product['productid']), 'product-display'); ?>
+        <a href="<?= $url; ?>">
+            <img class="thumbnail" src="<?= $this->product['picture']; ?>"/>
+        </a>
+    </td>
+    <td><?= $this->escape($this->product['description']); ?></td>
+
+    <td>
+        <!--розміщуємо галереї-->
+        <?= $this->partial('/product/row/galleries.phtml', array('galleries' => $this->product['galleries']));?>
+
+    </td>
+</tr>
+<?php ENDIF; ?>

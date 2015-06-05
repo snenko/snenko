@@ -1,0 +1,20 @@
+<?php if($this->article) { ?>
+
+<?php $url = $this->url(array('id'=>$this->article['blogid']), 'blog-display', true); ?>
+
+    <div class="thumbnail">
+<!--            <img src="..." alt="...">-->
+    <div class="caption">
+        <h3><?= $this->article['title'] ?></h3>
+        <p><?= $this->truncate($this->article['body'])->noTags() ?></p>
+
+<!--        <p>--><?//= $this->article['body'] ?><!--</p>-->
+        <p>
+            <a href="<?= $url; ?>" class="btn btn-primary" role="button">
+                <?= $this->translate('Learn more'); ?>
+            </a>
+        </p>
+    </div>
+</div>
+
+<?php } ?>

@@ -1,0 +1,16 @@
+<?php IF (count($this->articles)): ?>
+
+    <ul id="last-articles" class="nav nav-pills">
+
+        <?php FOREACH ($this->articles as $k => $v): ?>
+            <li class="presentation">
+                <a href="<?= $this->url(array('id' => $v['blogid']), 'blog-display', true); ?>">
+                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+                    <?= $v['title'] ?>
+                </a>
+            </li>
+        <?php ENDFOREACH; ?>
+
+    </ul>
+
+<?php ENDIF; ?>

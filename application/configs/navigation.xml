@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--<home>-->
+        <!--<label>home</label>-->
+        <!--<uri>/home</uri>-->
+        <!--<resource>index</resource>-->
+        <!--<privilege>index</privilege>-->
+    <!--</home>-->
+
+    <gallery>
+        <label>Galleries</label>
+        <uri>/gallery</uri>
+        <resource>gallery</resource>
+        <privilege>index</privilege>
+    </gallery>
+    <!--<product>-->
+        <!--<label>Products</label>-->
+        <!--<uri>/product</uri>-->
+        <!--<resource>product</resource>-->
+        <!--<privilege>index</privilege>-->
+    <!--</product>-->
+    <blog>
+        <label>Blog</label>
+        <uri>/blog</uri>
+        <resource>blog</resource>
+        <privilege>index</privilege>
+    </blog>
+    <contacts>
+        <label>Contacts</label>
+        <uri>/contacts</uri>
+        <resource>index</resource>
+        <privilege>contacts</privilege>
+    </contacts>
+
+    <!--languages-->
+    <lang>
+        <label></label>
+        <uri>index</uri>
+        <ico>/img/locale/lang.png</ico>
+        <!--<span>glyphicon glyphicon-globe</span>-->
+        <pages>
+            <lang1>
+                <label>українська</label>
+                <uri>/locale/index/uk_UA</uri>
+                <ico>/img/locale/ua.png</ico>
+                <resource>locale</resource>
+                <privilege>index</privilege>
+            </lang1>
+            <lang2>
+                <label>русский</label>
+                <uri>/locale/index/ru_RU</uri>
+                <ico>/img/locale/ru.png</ico>
+                <resource>locale</resource>
+                <privilege>index</privilege>
+            </lang2>
+            <lang3>
+                <label>english</label>
+                <uri>/locale/index/en_US</uri>
+                <ico>/img/locale/en.png</ico>
+                <resource>locale</resource>
+                <privilege>index</privilege>
+            </lang3>
+
+        </pages>
+    </lang>
+
+    <!--адмінка-->
+    <settings>
+        <label>Settings</label>
+        <uri>index</uri>
+        <resource>settings</resource>
+        <span>glyphicon glyphicon-cog</span>
+        <pages>
+            <settings_update>
+                <label>Settings</label>
+                <uri>/settings</uri>
+                <resource>settings</resource>
+                <privilege>update</privilege>
+            </settings_update>
+            <translator>
+                <label>translator</label>
+                <uri>/translator</uri>
+                <resource>translator</resource>
+                <privilege>index</privilege>
+            </translator>
+            <page>
+                <label>pages</label>
+                <uri>/page</uri>
+                <resource>page</resource>
+                <privilege>index</privilege>
+            </page>
+            <carousel>
+                <label>carousel</label>
+                <uri>/carousel</uri>
+                <resource>carousel</resource>
+                <privilege>index</privilege>
+            </carousel>
+        </pages>
+    </settings>
+
+    <logout>
+        <label>Logout</label>
+        <uri>/logout</uri>
+        <span>glyphicon glyphicon-log-out</span>
+        <resource>login</resource>
+        <privilege>logout</privilege>
+    </logout>
+
+</config>

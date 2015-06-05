@@ -1,0 +1,5 @@
+<?= $this->partial('section/success.phtml',
+    array('messages' => $this->messages,
+          'url'      => $this->url(array(), 'product-index'),
+          'gototext' => $this->translate('goto product')));
+?>

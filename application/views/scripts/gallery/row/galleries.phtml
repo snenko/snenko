@@ -1,0 +1,31 @@
+<?php if ($this->galleries > 0): ?>
+
+    <?php $dir = Summers_Snenko::getPhotoMdDir(); ?>
+
+    <?php FOREACH ($this->galleries AS $key=>$r): ?>
+
+        <?php $picture = $dir . "/" . $this->escape($r['picture']); ?>
+        <?php $description = $this->escape($r['description']); ?>
+        <?php $galleryname = $this->escape($r['galleryname']); ?>
+        <?php $url_gall_display = $this->url(array('id' => $r['galleryid']), 'gallery-display'); ?>
+
+        <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+            <a href="<?= $url_gall_display; ?>" title="<?= $description ?>">
+                <img class="center-block img-responsive img-rounded" src="<?= $picture ?>">
+            </a>
+            <h2 class="nice-font-dark text-center"><?= $galleryname ?></h2>
+            <p class="nice-font-dark text-center"><?= $description ?></p>
+            <?= $this->partial('/gallery/row/gallery-admin-panel.phtml', array('galleryid' => $r['galleryid'])); ?>
+        </div>
+
+        <?= $this->partial('/bootstrap/clearfix3.phtml', array('key' => $key)); ?>
+
+    <?php ENDFOREACH; ?>
+
+<?php else: ?>
+
+    <div class="col-md-12 text-center">
+        <p><?php echo $this->translate('not have records'); ?></p>
+    </div>
+
+<?php endif; ?>

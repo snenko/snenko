@@ -1,0 +1,10 @@
+<!------------------------------------------------------------->
+
+<div class="page-header">
+    <h2><?= $this->translate('carousel') ?></h2>
+</div>
+
+<?= $this->partial('/carousel/row/carousel-admin-panel.phtml'); ?>
+
+<?= $this->partial('/carousel/row/carousel-table.phtml', array('carousels' => $this->carousels)); ?>
+

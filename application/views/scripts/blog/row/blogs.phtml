@@ -1,0 +1,14 @@
+<?php IF ($this->blogs): ?>
+
+    <?php FOREACH ($this->blogs as $blog): ?>
+
+        <?= $this->partial('/blog/row/blog-item.phtml', array('blog' => $blog)); ?>
+
+    <?php ENDFOREACH; ?>
+
+<?php ELSE: ?>
+
+    <p><?php echo $this->translate('not have records'); ?></p>
+
+<?php ENDIF; ?>
+

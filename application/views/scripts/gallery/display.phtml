@@ -1,0 +1,17 @@
+<?= $this->partial('/section/jumbotron.phtml', array('title'=>$this->title)); ?>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <?= $this->partial('/product/row/product-admin-panel.phtml');?>
+
+                <?= $this->partial('/gallery/row/thumbnail-products.phtml', array('products' => $this->products)); ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+

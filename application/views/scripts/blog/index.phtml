@@ -1,0 +1,23 @@
+
+
+<?= $this->partial('/section/jumbotron.phtml', array('title'=> $this->title)); ?>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?= $this->partial('/blog/row/blog-admin-panel.phtml'); ?>
+                <?= $this->partial('/blog/row/blogs.phtml', array('blogs' => $this->blogs)); ?>
+            </div>
+        </div>
+        <?php IF(Acl::getInstance()->getCurrentRole() == Acl::ROLE_ADMIN): ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <?= $this->partial('/blog/row/blogs.phtml', array('blogs' => $this->blogs_status_none)); ?>
+                </div>
+            </div>
+        <?php ENDIF; ?>
+
+    </div>
+</div>
